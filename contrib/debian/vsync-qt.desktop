@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=vizee
+Comment=vizee P2P Cryptocurrency
+Comment[fr]=vizee, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=vizee, eşten eşe kriptografik sanal para birimi
+Exec=vizee-qt %u
+Terminal=false
+Type=Application
+Icon=vsync128
+MimeType=x-scheme-handler/vizee;
+Categories=Office;Finance;

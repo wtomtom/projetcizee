@@ -1,0 +1,26 @@
+[Unit]
+Description=vizee's distributed currency daemon
+After=network.target
+
+[Service]
+User=vizee
+Group=vizee
+
+Type=forking
+PIDFile=/var/lib/vsyncd/vsyncd.pid
+
+ExecStart=/usr/bin/vsyncd -daemon -pid=/var/lib/vsyncd/vsyncd.pid \
+          -conf=/etc/vizee/vizee.conf -datadir=/var/lib/vsyncd
+
+ExecStop=-/usr/bin/vizee-cli -conf=/etc/vizee/vizee.conf \
+         -datadir=/var/lib/vsyncd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
