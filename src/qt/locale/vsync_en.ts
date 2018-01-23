@@ -5012,7 +5012,7 @@ https://www.transifex.com/vizee-project/vizee-project-translations</source>
 <context>
     <name>vizee-core</name>
     <message>
-        <location filename="../vsyncstrings.cpp" line="+12"/>
+        <location filename="../vizeestrings.cpp" line="+12"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation type="unfinished">(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
     </message>
@@ -5248,10 +5248,10 @@ https://www.transifex.com/vizee-project/vizee-project-translations</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>To use vsyncd, or the -server option to vizee-qt, you must set an rpcpassword in the configuration file:
+        <source>To use vizeed, or the -server option to vizee-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=vsyncrpc
+rpcuser=vizeerpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.

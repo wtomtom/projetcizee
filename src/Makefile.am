@@ -64,7 +64,7 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += vsyncd
+  bin_PROGRAMS += vizeed
 endif
 
 if BUILD_BITCOIN_UTILS
@@ -179,7 +179,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between vsyncd and vizee-qt
+# server: shared between vizeed and vizee-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -223,7 +223,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between vsyncd and vizee-qt, but only linked
+# wallet: shared between vizeed and vizee-qt, but only linked
 # when wallet enabled
 
 libbitcoin_wallet_a_CFLAGS = -fPIC
@@ -318,7 +318,7 @@ univalue_libbitcoin_univalue_a_SOURCES = \
   univalue/univalue_escapes.h \
   univalue/univalue.h
 
-# common: shared between vsyncd, and vizee-qt and non-server tools
+# common: shared between vizeed, and vizee-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   allocators.cpp \
@@ -384,7 +384,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-vsyncd_LDADD = \
+vizeed_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UNIVALUE) \
@@ -395,40 +395,40 @@ vsyncd_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-vsyncd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+vizeed_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-vsyncd_LDADD += libbitcoin_wallet.a
+vizeed_LDADD += libbitcoin_wallet.a
 endif
-vsyncd_SOURCES = vsyncd.cpp
+vizeed_SOURCES = vizeed.cpp
 #
 
 if TARGET_WINDOWS
-vsyncd_SOURCES += vsyncd-res.rc
+vizeed_SOURCES += vizeed-res.rc
 endif
 
-vsyncd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
-vsyncd_CPPFLAGS = $(BITCOIN_INCLUDES)
-vsyncd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+vizeed_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
+vizeed_CPPFLAGS = $(BITCOIN_INCLUDES)
+vizeed_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 
 # vizee-cli binary #
-vsync_cli_LDADD = \
+vizee_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
   $(SSL_LIBS) \
   $(CRYPTO_LIBS)
 
-vsync_cli_SOURCES = \
+vizee_cli_SOURCES = \
   vizee-cli.cpp
 
-vsync_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
+vizee_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
 # vizee-tx binary #
-vsync_tx_LDADD = \
+vizee_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -437,15 +437,15 @@ vsync_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-vsync_tx_SOURCES = vizee-tx.cpp
-vsync_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+vizee_tx_SOURCES = vizee-tx.cpp
+vizee_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-vsync_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+vizee_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-vsync_cli_SOURCES += vizee-cli-res.rc
+vizee_cli_SOURCES += vizee-cli-res.rc
 endif
-vsync_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+vizee_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h

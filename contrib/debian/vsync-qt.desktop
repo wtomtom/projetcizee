@@ -7,6 +7,6 @@ Comment[tr]=vizee, eşten eşe kriptografik sanal para birimi
 Exec=vizee-qt %u
 Terminal=false
 Type=Application
-Icon=vsync128
+Icon=vizee128
 MimeType=x-scheme-handler/vizee;
 Categories=Office;Finance;

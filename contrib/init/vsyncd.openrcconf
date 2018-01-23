@@ -1,25 +1,25 @@
-# /etc/conf.d/vsyncd: config file for /etc/init.d/vsyncd
+# /etc/conf.d/vizeed: config file for /etc/init.d/vizeed
 
 # Config file location
 #BITCOIND_CONFIGFILE="/etc/vizee/vizee.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/vsyncd"
+#BITCOIND_PIDDIR="/var/run/vizeed"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/vsyncd.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/vizeed.pid"
 
-# Where to write vsyncd data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/vsyncd"
+# Where to write vizeed data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/vizeed"
 
-# User and group to own vsyncd process
+# User and group to own vizeed process
 #BITCOIND_USER="vizee"
 #BITCOIND_GROUP="vizee"
 
-# Path to vsyncd executable
-#BITCOIND_BIN="/usr/bin/vsyncd"
+# Path to vizeed executable
+#BITCOIND_BIN="/usr/bin/vizeed"
 
-# Nice value to run vsyncd under
+# Nice value to run vizeed under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

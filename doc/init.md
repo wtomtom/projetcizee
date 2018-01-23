@@ -1,14 +1,14 @@
-Sample init scripts and service configuration for vsyncd
+Sample init scripts and service configuration for vizeed
 ==========================================================
 
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/vsyncd.service:    systemd service unit configuration
-    contrib/init/vsyncd.openrc:     OpenRC compatible SysV style init script
-    contrib/init/vsyncd.openrcconf: OpenRC conf.d file
-    contrib/init/vsyncd.conf:       Upstart service configuration file
-    contrib/init/vsyncd.init:       CentOS compatible SysV style init script
+    contrib/init/vizeed.service:    systemd service unit configuration
+    contrib/init/vizeed.openrc:     OpenRC compatible SysV style init script
+    contrib/init/vizeed.openrcconf: OpenRC conf.d file
+    contrib/init/vizeed.conf:       Upstart service configuration file
+    contrib/init/vizeed.init:       CentOS compatible SysV style init script
 
 1. Service User
 ---------------------------------
@@ -19,17 +19,17 @@ and group.  They must be created before attempting to use these scripts.
 2. Configuration
 ---------------------------------
 
-At a bare minimum, vsyncd requires that the rpcpassword setting be set
+At a bare minimum, vizeed requires that the rpcpassword setting be set
 when running as a daemon.  If the configuration file does not exist or this
-setting is not set, vsyncd will shutdown promptly after startup.
+setting is not set, vizeed will shutdown promptly after startup.
 
 This password does not have to be remembered or typed as it is mostly used
-as a fixed token that vsyncd and client programs read from the configuration
+as a fixed token that vizeed and client programs read from the configuration
 file, however it is recommended that a strong and secure password be used
 as this password is security critical to securing the wallet should the
 wallet be enabled.
 
-If vsyncd is run with "-daemon" flag, and no rpcpassword is set, it will
+If vizeed is run with "-daemon" flag, and no rpcpassword is set, it will
 print a randomly generated suitable password to stderr.  You can also
 generate one from the shell yourself like this:
 
@@ -45,16 +45,16 @@ see contrib/debian/examples/vizee.conf.
 
 All three configurations assume several paths that might need to be adjusted.
 
-Binary:              /usr/bin/vsyncd
+Binary:              /usr/bin/vizeed
 Configuration file:  /etc/vizee/vizee.conf
-Data directory:      /var/lib/vsyncd
-PID file:            /var/run/vsyncd/vsyncd.pid (OpenRC and Upstart)
-                     /var/lib/vsyncd/vsyncd.pid (systemd)
+Data directory:      /var/lib/vizeed
+PID file:            /var/run/vizeed/vizeed.pid (OpenRC and Upstart)
+                     /var/lib/vizeed/vizeed.pid (systemd)
 
 The configuration file, PID directory (if applicable) and data directory
 should all be owned by the vizee user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-vizee user and group.  Access to vizee-cli and other vsyncd rpc clients
+vizee user and group.  Access to vizee-cli and other vizeed rpc clients
 can then be controlled by group membership.
 
 4. Installing Service Configuration
@@ -66,19 +66,19 @@ Installing this .service file consists on just copying it to
 /usr/lib/systemd/system directory, followed by the command
 "systemctl daemon-reload" in order to update running systemd configuration.
 
-To test, run "systemctl start vsyncd" and to enable for system startup run
-"systemctl enable vsyncd"
+To test, run "systemctl start vizeed" and to enable for system startup run
+"systemctl enable vizeed"
 
 4b) OpenRC
 
-Rename vsyncd.openrc to vsyncd and drop it in /etc/init.d.  Double
+Rename vizeed.openrc to vizeed and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
-"/etc/init.d/vsyncd start" and configure it to run on startup with
-"rc-update add vsyncd"
+"/etc/init.d/vizeed start" and configure it to run on startup with
+"rc-update add vizeed"
 
 4c) Upstart (for Debian/Ubuntu based distributions)
 
-Drop vsyncd.conf in /etc/init.  Test by running "service vsyncd start"
+Drop vizeed.conf in /etc/init.  Test by running "service vizeed start"
 it will automatically start on reboot.
 
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
@@ -86,11 +86,11 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 
 4d) CentOS
 
-Copy vsyncd.init to /etc/init.d/vsyncd. Test by running "service vsyncd start".
+Copy vizeed.init to /etc/init.d/vizeed. Test by running "service vizeed start".
 
-Using this script, you can adjust the path and flags to the vsyncd program by
-setting the VsyncD and FLAGS environment variables in the file
-/etc/sysconfig/vsyncd. You can also use the DAEMONOPTS environment variable here.
+Using this script, you can adjust the path and flags to the vizeed program by
+setting the vizeeD and FLAGS environment variables in the file
+/etc/sysconfig/vizeed. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn
 -----------------------------------

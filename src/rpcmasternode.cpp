@@ -56,8 +56,8 @@ Value obfuscation(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() == 0)
         throw runtime_error(
-            "obfuscation <vsyncaddress> <amount>\n"
-            "vsyncaddress, reset, or auto (AutoDenominate)"
+            "obfuscation <vizeeaddress> <amount>\n"
+            "vizeeaddress, reset, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
 
@@ -78,8 +78,8 @@ Value obfuscation(const Array& params, bool fHelp)
 
     if (params.size() != 2)
         throw runtime_error(
-            "obfuscation <vsyncaddress> <amount>\n"
-            "vsyncaddress, denominate, or auto (AutoDenominate)"
+            "obfuscation <vizeeaddress> <amount>\n"
+            "vizeeaddress, denominate, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
 

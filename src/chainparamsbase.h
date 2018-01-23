@@ -9,7 +9,7 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between vizee-cli and vsyncd)
+ * CBaseChainParams defines the base parameters (shared between vizee-cli and vizeed)
  * of a given instance of the vizee system.
  */
 class CBaseChainParams

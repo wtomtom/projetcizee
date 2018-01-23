@@ -44,9 +44,9 @@ QString BitcoinUnits::id(int unit)
     case VZE:
         return QString("vizee");
     case mVSX:
-        return QString("mvsync");
+        return QString("mvizee");
     case uVSX:
-        return QString::fromUtf8("uvsync");
+        return QString::fromUtf8("uvizee");
     default:
         return QString("???");
     }

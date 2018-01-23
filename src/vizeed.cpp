@@ -76,7 +76,7 @@ bool AppInit(int argc, char* argv[])
             strUsage += LicenseInfo();
         } else {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  vsyncd [options]                     " + _("Start vizee Core Daemon") + "\n";
+                        "  vizeed [options]                     " + _("Start vizee Core Daemon") + "\n";
 
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
@@ -116,7 +116,7 @@ bool AppInit(int argc, char* argv[])
                 fCommandLine = true;
 
         if (fCommandLine) {
-            fprintf(stderr, "Error: There is no RPC client functionality in vsyncd anymore. Use the vizee-cli utility instead.\n");
+            fprintf(stderr, "Error: There is no RPC client functionality in vizeed anymore. Use the vizee-cli utility instead.\n");
             exit(1);
         }
 #ifndef WIN32
@@ -175,7 +175,7 @@ int main(int argc, char* argv[])
 {
     SetupEnvironment();
 
-    // Connect vsyncd signal handlers
+    // Connect vizeed signal handlers
     noui_connect();
 
     return (AppInit(argc, argv) ? 0 : 1);

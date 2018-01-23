@@ -182,7 +182,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="anonymizeVsync">
+          <widget class="QSpinBox" name="anonymizevizee">
            <property name="minimum">
             <number>100</number>
            </property>

@@ -114,7 +114,7 @@ public:
         assert(hashGenesisBlock == uint256("0x00000d80630223c471608c9a2d20281027a53ca5e9814db38a8fa14e377658a0"));
         assert(genesis.hashMerkleRoot == uint256("0xb52bd995991fdd6e5447e1ba97027396ea5fc431617da64b9ff0d72f6295ddc9"));
 		
-        vSeeds.push_back(CDNSSeedData("vsyncd.dyndns.org", "vseed.dyndns.org"));
+        vSeeds.push_back(CDNSSeedData("vizeed.dyndns.org", "vseed.dyndns.org"));
 		
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 70);

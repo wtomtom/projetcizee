@@ -7,13 +7,13 @@ User=vizee
 Group=vizee
 
 Type=forking
-PIDFile=/var/lib/vsyncd/vsyncd.pid
+PIDFile=/var/lib/vizeed/vizeed.pid
 
-ExecStart=/usr/bin/vsyncd -daemon -pid=/var/lib/vsyncd/vsyncd.pid \
-          -conf=/etc/vizee/vizee.conf -datadir=/var/lib/vsyncd
+ExecStart=/usr/bin/vizeed -daemon -pid=/var/lib/vizeed/vizeed.pid \
+          -conf=/etc/vizee/vizee.conf -datadir=/var/lib/vizeed
 
 ExecStop=-/usr/bin/vizee-cli -conf=/etc/vizee/vizee.conf \
-         -datadir=/var/lib/vsyncd stop
+         -datadir=/var/lib/vizeed stop
 
 Restart=always
 PrivateTmp=true

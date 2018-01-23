@@ -487,7 +487,7 @@ SOURCES += src/activemasternode.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/obfuscationconfig.cpp \
            src/qt/vizee.cpp \
-           src/qt/vsyncstrings.cpp \
+           src/qt/vizeestrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -565,7 +565,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_vsync.cpp \
+           src/test/test_vizee.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -656,21 +656,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/vizee.qrc src/qt/vsync_locale.qrc
+RESOURCES += src/qt/vizee.qrc src/qt/vizee_locale.qrc
 
-TRANSLATIONS += src/qt/locale/vsync_bg.ts \
-                src/qt/locale/vsync_de.ts \
-                src/qt/locale/vsync_en.ts \
-                src/qt/locale/vsync_es.ts \
-                src/qt/locale/vsync_fi.ts \
-                src/qt/locale/vsync_fr.ts \
-                src/qt/locale/vsync_it.ts \
-                src/qt/locale/vsync_ja.ts \
-                src/qt/locale/vsync_pl.ts \
-                src/qt/locale/vsync_pt.ts \
-                src/qt/locale/vsync_ru.ts \
-                src/qt/locale/vsync_sk.ts \
-                src/qt/locale/vsync_sv.ts \
-                src/qt/locale/vsync_vi.ts \
-                src/qt/locale/vsync_zh_CN.ts \
-                src/qt/locale/vsync_zh_TW.ts
+TRANSLATIONS += src/qt/locale/vizee_bg.ts \
+                src/qt/locale/vizee_de.ts \
+                src/qt/locale/vizee_en.ts \
+                src/qt/locale/vizee_es.ts \
+                src/qt/locale/vizee_fi.ts \
+                src/qt/locale/vizee_fr.ts \
+                src/qt/locale/vizee_it.ts \
+                src/qt/locale/vizee_ja.ts \
+                src/qt/locale/vizee_pl.ts \
+                src/qt/locale/vizee_pt.ts \
+                src/qt/locale/vizee_ru.ts \
+                src/qt/locale/vizee_sk.ts \
+                src/qt/locale/vizee_sv.ts \
+                src/qt/locale/vizee_vi.ts \
+                src/qt/locale/vizee_zh_CN.ts \
+                src/qt/locale/vizee_zh_TW.ts

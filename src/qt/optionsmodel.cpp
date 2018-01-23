@@ -76,11 +76,11 @@ void OptionsModel::Init()
     if (!settings.contains("nObfuscationRounds"))
         settings.setValue("nObfuscationRounds", 2);
 
-    if (!settings.contains("nAnonymizeVsyncAmount"))
-        settings.setValue("nAnonymizeVsyncAmount", 1000);
+    if (!settings.contains("nAnonymizevizeeAmount"))
+        settings.setValue("nAnonymizevizeeAmount", 1000);
 
     nObfuscationRounds = settings.value("nObfuscationRounds").toLongLong();
-    nAnonymizeVsyncAmount = settings.value("nAnonymizeVsyncAmount").toLongLong();
+    nAnonymizevizeeAmount = settings.value("nAnonymizevizeeAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -147,8 +147,8 @@ void OptionsModel::Init()
 
     if (settings.contains("nObfuscationRounds"))
         SoftSetArg("-obfuscationrounds", settings.value("nObfuscationRounds").toString().toStdString());
-    if (settings.contains("nAnonymizeVsyncAmount"))
-        SoftSetArg("-anonymizevsyncamount", settings.value("nAnonymizeVsyncAmount").toString().toStdString());
+    if (settings.contains("nAnonymizevizeeAmount"))
+        SoftSetArg("-anonymizevizeeamount", settings.value("nAnonymizevizeeAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -228,8 +228,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("nThreadsScriptVerif");
         case ObfuscationRounds:
             return QVariant(nObfuscationRounds);
-        case AnonymizeVsyncAmount:
-            return QVariant(nAnonymizeVsyncAmount);
+        case AnonymizevizeeAmount:
+            return QVariant(nAnonymizevizeeAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -338,10 +338,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             settings.setValue("nObfuscationRounds", nObfuscationRounds);
             emit obfuscationRoundsChanged(nObfuscationRounds);
             break;
-        case AnonymizeVsyncAmount:
-            nAnonymizeVsyncAmount = value.toInt();
-            settings.setValue("nAnonymizeVsyncAmount", nAnonymizeVsyncAmount);
-            emit anonymizeVsyncAmountChanged(nAnonymizeVsyncAmount);
+        case AnonymizevizeeAmount:
+            nAnonymizevizeeAmount = value.toInt();
+            settings.setValue("nAnonymizevizeeAmount", nAnonymizevizeeAmount);
+            emit anonymizevizeeAmountChanged(nAnonymizevizeeAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

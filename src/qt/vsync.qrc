@@ -37,12 +37,12 @@
         <file alias="tx_input">res/icons/tx_input.png</file>
         <file alias="tx_output">res/icons/tx_output.png</file>
         <file alias="tx_inout">res/icons/tx_inout.png</file>
-        <file alias="unit_vsync">res/icons/unit_vsync.png</file>
-        <file alias="unit_mvsync">res/icons/unit_mvsync.png</file>
-        <file alias="unit_uvsync">res/icons/unit_uvsync.png</file>
-        <file alias="unit_tvsync">res/icons/unit_tvsync.png</file>
-        <file alias="unit_tmvsync">res/icons/unit_tmvsync.png</file>
-        <file alias="unit_tuvsync">res/icons/unit_tuvsync.png</file>
+        <file alias="unit_vizee">res/icons/unit_vizee.png</file>
+        <file alias="unit_mvizee">res/icons/unit_mvizee.png</file>
+        <file alias="unit_uvizee">res/icons/unit_uvizee.png</file>
+        <file alias="unit_tvizee">res/icons/unit_tvizee.png</file>
+        <file alias="unit_tmvizee">res/icons/unit_tmvizee.png</file>
+        <file alias="unit_tuvizee">res/icons/unit_tuvizee.png</file>
         <file alias="lock_closed">res/icons/lock_closed.png</file>
         <file alias="lock_open">res/icons/lock_open.png</file>
         <file alias="key">res/icons/key.png</file>
@@ -58,7 +58,7 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
-        <file alias="vsync_logo_horizontal">res/images/vsync_logo_horizontal.png</file>
+        <file alias="vizee_logo_horizontal">res/images/vizee_logo_horizontal.png</file>
         <file alias="downArrow">res/images/downArrow.png</file>
         <file alias="downArrow_small">res/images/downArrow_small.png</file>
         <file alias="upArrow_small">res/images/upArrow_small.png</file>

@@ -31,7 +31,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// VsyncMiner
+// vizeeMiner
 //
 
 //
@@ -418,7 +418,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("VsyncMiner : generated block is stale");
+            return error("vizeeMiner : generated block is stale");
     }
 
     // Remove key from key pool
@@ -433,7 +433,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     // Process this block the same as if we had received it from another node
     CValidationState state;
     if (!ProcessNewBlock(state, NULL, pblock))
-        return error("VsyncMiner : ProcessNewBlock, block not accepted");
+        return error("vizeeMiner : ProcessNewBlock, block not accepted");
 
     return true;
 }
@@ -444,7 +444,7 @@ bool fGenerateBitcoins = false;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("VsyncMiner started\n");
+    LogPrintf("vizeeMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("vizee-miner");
 
@@ -518,7 +518,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             continue;
         }
 
-        LogPrintf("Running VsyncMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrintf("Running vizeeMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //

@@ -3,19 +3,19 @@ EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
 # vizee qt core #
 QT_TS = \
-  qt/locale/vsync_ca.ts \
-  qt/locale/vsync_da.ts \
-  qt/locale/vsync_de.ts \
-  qt/locale/vsync_en.ts \
-  qt/locale/vsync_en_US.ts \
-  qt/locale/vsync_es.ts \
-  qt/locale/vsync_fr_FR.ts \
-  qt/locale/vsync_it.ts \
-  qt/locale/vsync_ja.ts \
-  qt/locale/vsync_pt.ts \
-  qt/locale/vsync_ro_RO.ts \
-  qt/locale/vsync_ru.ts \
-  qt/locale/vsync_zh_TW.ts
+  qt/locale/vizee_ca.ts \
+  qt/locale/vizee_da.ts \
+  qt/locale/vizee_de.ts \
+  qt/locale/vizee_en.ts \
+  qt/locale/vizee_en_US.ts \
+  qt/locale/vizee_es.ts \
+  qt/locale/vizee_fr_FR.ts \
+  qt/locale/vizee_it.ts \
+  qt/locale/vizee_ja.ts \
+  qt/locale/vizee_pt.ts \
+  qt/locale/vizee_ro_RO.ts \
+  qt/locale/vizee_ru.ts \
+  qt/locale/vizee_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -101,10 +101,10 @@ QT_MOC = \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_vsync.cpp
+QT_QRC_CPP = qt/qrc_vizee.cpp
 QT_QRC = qt/vizee.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_vsync_locale.cpp
-QT_QRC_LOCALE = qt/vsync_locale.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_vizee_locale.cpp
+QT_QRC_LOCALE = qt/vizee_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -218,12 +218,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_vsync.png \
-  qt/res/icons/unit_mvsync.png \
-  qt/res/icons/unit_uvsync.png \
-  qt/res/icons/unit_tvsync.png \
-  qt/res/icons/unit_tmvsync.png \
-  qt/res/icons/unit_tuvsync.png
+  qt/res/icons/unit_vizee.png \
+  qt/res/icons/unit_mvizee.png \
+  qt/res/icons/unit_uvizee.png \
+  qt/res/icons/unit_tvizee.png \
+  qt/res/icons/unit_tmvizee.png \
+  qt/res/icons/unit_tuvizee.png
 
 BITCOIN_QT_CPP = \
   qt/bitcoinaddressvalidator.cpp \
@@ -290,7 +290,7 @@ RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
-  qt/res/images/vsync_logo_horizontal.png \
+  qt/res/images/vizee_logo_horizontal.png \
   qt/res/images/downArrow.png \
   qt/res/images/downArrow_small.png \
   qt/res/images/upArrow_small.png \
@@ -326,7 +326,7 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_vsync_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_vizee_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
@@ -334,45 +334,45 @@ $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
 # vizee-qt binary #
-qt_vsync_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_vizee_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-qt_vsync_qt_SOURCES = qt/vizee.cpp
+qt_vizee_qt_SOURCES = qt/vizee.cpp
 if TARGET_DARWIN
-  qt_vsync_qt_SOURCES += $(BITCOIN_MM)
+  qt_vizee_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_vsync_qt_SOURCES += $(BITCOIN_RC)
+  qt_vizee_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_vsync_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_vizee_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_vsync_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_vizee_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_vsync_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_vizee_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_vsync_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_UNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_vizee_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_UNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1)
-qt_vsync_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_vsync_qt_LIBTOOLFLAGS = --tag CXX
+qt_vizee_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_vizee_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 .SECONDARY: $(QT_QM)
 
-qt/vsyncstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
+qt/vizeestrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: qt/vsyncstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: qt/vizeestrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/vsync_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/vizee_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@test -f $(@D)/$(<F) || cp -f $< $(@D)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name vsync_locale $(@D)/$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name vizee_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
@@ -384,10 +384,10 @@ CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda 
 
 CLEANFILES += $(CLEAN_QT)
 
-vsync_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_vsync_qt_OBJECTS) qt/vizee-qt$(EXEEXT) $(LIBBITCOINQT)
+vizee_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_vizee_qt_OBJECTS) qt/vizee-qt$(EXEEXT) $(LIBBITCOINQT)
 
-vsync_qt : qt/vizee-qt$(EXEEXT)
+vizee_qt : qt/vizee-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

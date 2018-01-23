@@ -40,7 +40,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>io.vizee.VsyncPayment</string>
+      <string>io.vizee.vizeePayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>vizee</string>
@@ -65,7 +65,7 @@
         <string>application/x-vizee-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>vsyncpaymentrequest</string>
+          <string>vizeepaymentrequest</string>
         </array>
       </dict>
     </dict>

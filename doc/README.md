@@ -13,8 +13,8 @@ The following are some helpful notes on how to run vizee on your native platform
 
 Unpack the files into a directory and run:
 
-- bin/32/vizee-qt (GUI, 32-bit) or bin/32/vsyncd (headless, 32-bit)
-- bin/64/vizee-qt (GUI, 64-bit) or bin/64/vsyncd (headless, 64-bit)
+- bin/32/vizee-qt (GUI, 32-bit) or bin/32/vizeed (headless, 32-bit)
+- bin/64/vizee-qt (GUI, 64-bit) or bin/64/vizeed (headless, 64-bit)
 
 ### Windows
 
