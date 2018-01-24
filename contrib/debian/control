@@ -23,8 +23,8 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage: http://www.vizee.pw
-Vcs-Git: git://github.com/vizee-Project/vizee.git
-Vcs-Browser: http://github.com/vizee-Project/vizee
+Vcs-Git: git://github.com/wtomtom/vizee.git
+Vcs-Browser: http://github.com/wtomtom/vizee
 
 Package: vizeed
 Architecture: any

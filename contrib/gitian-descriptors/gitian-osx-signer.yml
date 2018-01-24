@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/vizee-project/vizee-detached-sigs.git"
+- "url": "https://github.com/wtomtom/vizee-detached-sigs.git"
   "dir": "signature"
 files:
 - "vizee-osx-unsigned.tar.gz"

@@ -2194,7 +2194,7 @@ Please check the address and try again.</source>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/vizee-project/vizee-project-translations</source>
+https://www.transifex.com/wtomtom/wtomtom-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

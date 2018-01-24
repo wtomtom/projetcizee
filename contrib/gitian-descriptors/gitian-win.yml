@@ -22,7 +22,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/vizee-project/vizee.git"
+- "url": "https://github.com/wtomtom/vizee.git"
   "dir": "vizee"
 files: []
 script: |
