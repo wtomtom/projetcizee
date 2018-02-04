@@ -108,7 +108,7 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1516748672;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 0;
+        genesis.nNonce = 21705483;
         hashGenesisBlock = genesis.GetHash();
 		
         assert(hashGenesisBlock == uint256("0x00000d80630223c471608c9a2d20281027a53ca5e9814db38a8fa14e377658a0"));
