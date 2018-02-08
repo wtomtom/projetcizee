@@ -85,7 +85,7 @@ public:
         pchMessageStart[2] = 0x0a;
         pchMessageStart[3] = 0x5a;
         vAlertPubKey = ParseHex("04a7d596778878cc670967d4d2488805f17938fb18937c2826131aff059a9dfa8345a777129607d28d62ab082168e8bb7c1c6457a22cb2b32b23082e457aa1bf93");
-        nDefaultPort = 75010;
+        nDefaultPort = 65020;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // vizee starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;

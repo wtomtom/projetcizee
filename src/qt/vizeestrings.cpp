@@ -203,10 +203,10 @@ QT_TRANSLATE_NOOP("vizee-core", ""
 QT_TRANSLATE_NOOP("vizee-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("vizee-core", "(75010 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("vizee-core", "(65020 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("vizee-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("vizee-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("vizee-core", "(must be 75010 for mainnet)"),
+QT_TRANSLATE_NOOP("vizee-core", "(must be 65020 for mainnet)"),
 QT_TRANSLATE_NOOP("vizee-core", "<category> can be:\n"),
 QT_TRANSLATE_NOOP("vizee-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("vizee-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),

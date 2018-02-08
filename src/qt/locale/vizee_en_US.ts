@@ -4178,8 +4178,8 @@ for example: alertnotify=echo %%s | mail -s "vizee Alert" admin@foo.com
         <translation>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</translation>
     </message>
     <message>
-        <source>(75010 could be used only on mainnet)</source>
-        <translation>(75010 could be used only on mainnet)</translation>
+        <source>(65020 could be used only on mainnet)</source>
+        <translation>(65020 could be used only on mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4190,8 +4190,8 @@ for example: alertnotify=echo %%s | mail -s "vizee Alert" admin@foo.com
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 75010 for mainnet)</source>
-        <translation>(must be 75010 for mainnet)</translation>
+        <source>(must be 65020 for mainnet)</source>
+        <translation>(must be 65020 for mainnet)</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:
